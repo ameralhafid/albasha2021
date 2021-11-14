@@ -1,29 +1,24 @@
 import React from 'react'
 
-import CartLogo from '../static/images/cart.svg'
-// import NavLogo from '../static/images/burger.svg'
-import Logo from '../static/images/logo.png'
+import CartLogo from '../static/images/svgs/cart.svg'
+import Logo from '../static/images/logo.webp'
 
 export default function Header(props) {
     const { name, cart, onToggleCart } = props
     return (
         <header>
             <div className='container'>
-                {/* <div className='navbar-handler'>
-                    <img onClick={props.onShowNavbar} src={NavLogo} alt="navbar" />
-                </div> */}
-
                 <div className='logo'>
                     <a href='#'>
-                        <img src={Logo} />
+                        <img src={Logo} alt='logo' />
                         {name}
                     </a>
                 </div>
 
                 <div className='right-side'>
 
-                    <div className={`cart-handler ${cart ? 'cart-not-empty' : null}`}>
-                        <img onClick={onToggleCart} src={CartLogo} alt="React Logo" />
+                    <div onClick={onToggleCart} className={`cart-handler ${cart ? 'cart-not-empty' : null}`}>
+                        <img src={CartLogo} alt="React Logo" />
                     </div>
                     <div className='language-handler'>
                         <select onChange={props.onLanguageChange}>
